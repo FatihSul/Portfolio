@@ -1,6 +1,7 @@
 :root{
---blue: #2a607c;
-
+--blue: #105171;
+--lightblue: #4fb1fb;
+--white: #fff;
 }
 
 * {
@@ -9,6 +10,7 @@
     margin: 0;
 }
 
+/* gives header the blue background, white text, font & spacing needed */
 .header{
     padding: 20px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -16,32 +18,13 @@
     color: #ffffff;
 }
 
+/* aligns the header */
 .header h1{
     display: inline-block;
     font-size: 48px;
 }
 
-.banner {
-    position: relative;
-}
-
-.banner p {
-    position: absolute;
-    top: 20px;
-    padding: 20px;
-    background-color: aliceblue;
-}
-
-.banner img {
-    width: 100%;
-    height: 400px;
-    opacity: 0.5;
-}
-
-.banner img:hover {
-    opacity: 1;
-}
-
+/* aligns the nav */
 .header nav{
     padding-top: 15px;
     margin-right: 20px;
@@ -60,13 +43,45 @@
 }
 
 .header nav ul li a {
-    color: #ffffff;
+    color: var(--white);
     text-decoration: none;
+}
+
+/* relative position alignment for the banner text */
+.banner {
+    position: relative;
+}
+
+/* banner text */
+.banner p {
+    position: absolute;
+    top: 60px;
+    left: 100px;;
+    color: var(--white);
+}
+
+/* banner image specs */
+.banner img {
+    width: 100%;
+    height: 200px;
+    opacity: 0.5;
+    object-fit: cover;
+}
+
+/* reactive image */
+.banner img:hover {
+    opacity: 1;
+    transition: 0.5s;
 }
 
 .section{
     display: flex;
     margin: 30px;
+    justify-content: center;
+}
+
+.section h2{
+    margin-right: 30px;
 }
 
 .section .content {
@@ -90,22 +105,28 @@
   height: 150px;
   margin-top: 10px;
   line-height: 150px;
-  color: white;
+  color: var(--white);
   font-weight: bold;
   font-size: 3em;
   text-align: center;
+  border: 10px var(--lightblue);
 }
 
 .main-item {
     flex-basis: 100%;
+    background-image: url(blue-background.webp);
+    background-size: cover;
 }
 
 footer {
-    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
     background-color: var(--blue);
     color: white;
     text-align: left;
+ }
+
+ @media screen {
+    
  }
