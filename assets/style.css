@@ -1,7 +1,8 @@
 :root{
---blue: #105171;
---lightblue: #4fb1fb;
+--blue: #05204A;
+--lightblue: #80CED7;
 --white: #fff;
+--red: #ED6A5A;
 }
 
 * {
@@ -10,12 +11,18 @@
     margin: 0;
 }
 
+body{
+    background-color: var(--lightblue) ;
+}
+
 /* gives header the blue background, white text, font & spacing needed */
 .header{
     padding: 20px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: var(--blue);
-    color: #ffffff;
+    color: var(--white);
+    display: flex;
+    justify-content: space-between;
 }
 
 /* aligns the header */
@@ -27,14 +34,14 @@
 /* aligns the nav */
 .header nav{
     padding-top: 15px;
-    margin-right: 20px;
-    float: right;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 20px;
+    background-color: var(--blue);
 }
 
 .header nav ul{
     list-style-type: none;
+    white-space: nowrap;
 }
 
 .header nav ul li{
@@ -47,29 +54,26 @@
     text-decoration: none;
 }
 
-/* relative position alignment for the banner text */
-.banner {
+/* relative position alignment for the selfie text */
+.selfie {
     position: relative;
 }
 
 /* banner text */
-.banner p {
+.selfie p {
     position: absolute;
-    top: 60px;
-    left: 100px;;
-    color: var(--white);
+    top: 100px;
+    left: 225px;
 }
 
 /* banner image specs */
-.banner img {
-    width: 100%;
+.selfie img {
     height: 200px;
-    opacity: 0.5;
-    object-fit: cover;
+    border-radius: 30%;
 }
 
 /* reactive image */
-.banner img:hover {
+.selfie img:hover {
     opacity: 1;
     transition: 0.5s;
 }
@@ -78,6 +82,17 @@
     display: flex;
     margin: 30px;
     justify-content: center;
+}
+
+.subsection{
+    display: flex;
+    margin: 30px;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.subsection h2{
+    text-align: center;
 }
 
 .section h2{
@@ -98,8 +113,9 @@
     list-style: none;
 }
 
+/*  */
 .flex-item {
-  background: tomato;
+  background: var(--red);
   padding: 5px;
   width: 200px;
   height: 150px;
@@ -108,13 +124,35 @@
   color: var(--white);
   font-weight: bold;
   font-size: 3em;
-  text-align: center;
   border: 10px var(--lightblue);
+  position: relative;
+  opacity: 0.5;
+  transition: 0.5s;
+}
+
+.flex-item:hover {
+    opacity: 1;
+    transition: 0.5s;
+    height: 300px;
+    width: 300px;
+}
+
+.flex-item p {
+    position: absolute;
+    left: 10px;
+    bottom: -50px;
+    font-size: 50%;
+    color: black;
 }
 
 .main-item {
     flex-basis: 100%;
-    background-image: url(blue-background.webp);
+    background-image: url(Defactor.png);
+    background-size: cover;
+}
+
+.second-item {
+    background-image: url(Google.png);
     background-size: cover;
 }
 
@@ -127,6 +165,8 @@ footer {
     text-align: left;
  }
 
- @media screen {
-    
- }
+ @media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+  }
