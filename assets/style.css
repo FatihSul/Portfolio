@@ -48,6 +48,9 @@ body{
     display: inline-block;
     margin-left: 25px;
 }
+.header nav ul li:hover{
+    cursor: grabbing;
+}
 
 .header nav ul li a {
     color: var(--white);
@@ -137,7 +140,7 @@ body{
     width: 300px;
 }
 
-.flex-item p {
+.flex-item a {
     position: absolute;
     left: 10px;
     bottom: -50px;
@@ -153,6 +156,21 @@ body{
 
 .second-item {
     background-image: url(Google.png);
+    background-size: cover;
+}
+
+.third-item{
+    background-image: url(Twitter.png);
+    background-size: cover;
+}
+
+.fourth-item{
+    background-image: url(Youtube.jpg);
+    background-size: cover;
+}
+
+.fifth-item{
+    background-image: url(Facebook.png);
     background-size: cover;
 }
 
